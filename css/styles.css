@@ -1,0 +1,566 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #020024;
+    background: linear-gradient(180deg, rgba(2, 0, 36, 1) 0%, rgba(20, 0, 66, 1) 35%, rgba(2, 55,115,1)90%);
+}
+h1{
+    color: white;
+    text-align: center;
+    font-size: 3em;
+    color: #d4b400;
+}
+.section{
+    display: flex;
+    
+}
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 30px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.15);
+}
+.card h2 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 15px;
+}
+.card .value {
+    font-size: 28px;
+    font-weight: bold;
+    color: #007aff;
+}
+.map {
+    position: relative;
+    width: 600px;    
+    margin: auto;
+}
+.map-img {
+    width: 100%;
+    display: block;
+}
+
+/* Map point buttons */
+.map-point {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    padding: 8px 12px;
+    font-size: 14px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+/* Hover effect */
+.map-point:hover {
+    background: #0056b3;
+    transform: translate(-50%, -50%) scale(1.1);
+}
+.map-point:hover::after {
+    content: attr(data-info);
+    position: absolute;
+    top: -10px;
+    left: 120%;
+    background: rgba(0,0,0,0.8);
+    color: white;
+    padding: 6px 10px;
+    border-radius: 5px;
+    white-space: pre-wrap;
+    min-width: 10em;
+}
+
+
+
+/* Navigation Bar */
+.navbar {
+    width: 100%;
+    position: static;     /* makes it fixed at the top when scrolling */
+    top: 0;
+    background: #000000;
+background: linear-gradient(180deg,rgba(0,0,0,1) 100%, rgba(3,0,38,1) 100%);
+
+    padding: 15px 0;
+    z-index: 1000;        /* stays above all content */
+}
+
+/* Navigation List */
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation Items */
+.navbar ul li {
+    display: inline-block;
+}
+
+/* Links */
+.navbar ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 500;
+    transition: 0.3s ease;
+    padding: 6px 10px;
+    border-radius: 5px;
+}
+
+/* Hover Effect */
+.navbar ul li a:hover {
+    background: #007bff;
+    color: white;
+    transform: scale(1.1);
+}
+
+a{
+    text-decoration: none;
+}
+
+
+
+
+/* Helpdesk */
+
+
+
+.chat-container {
+    width: 350px;
+    height: 500px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    font-family: Arial;
+}
+
+.chat-header {
+    background: #007bff;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.chat-box {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+    background: #f5f5f5;
+}
+
+.message {
+    padding: 8px 10px;
+    margin: 6px 0;
+    border-radius: 6px;
+    max-width: 80%;
+}
+
+.user-message {
+    background: #007bff;
+    color: white;
+    align-self: flex-end;
+}
+
+.bot-message {
+    background: #e0e0e0;
+    align-self: flex-start;
+}
+
+.chat-input-area {
+    display: flex;
+    border-top: 1px solid #ccc;
+}
+
+.chat-input-area input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    outline: none;
+}
+
+.chat-input-area button {
+    padding: 10px 20px;
+    background: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+
+.helpdesk {
+    width: 90%;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.helpdesk h2 {
+    color: #ffffff;
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+.bortle-table {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(6px);
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.bortle-table .row {
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr 4fr;
+    padding: 12px 10px;
+    color: white;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.bortle-table .row:last-child {
+    border-bottom: none;
+}
+
+.bortle-table .header {
+    font-weight: bold;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+}
+
+
+/* DESCRIPTION KA CODE */
+
+/* Center the entire section */
+.terms-section {
+    width: 70%;
+    margin: 40px auto;
+    text-align: left;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background: #f7f7fb;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Section Title */
+.terms-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Remove default bullets and fix spacing */
+.terms-list {
+    list-style: none;
+    padding: 0;
+}
+
+/* Each term box */
+.terms-list li {
+    margin-bottom: 20px;
+    padding: 15px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.05);
+}
+
+/* Term title */
+.terms-list strong {
+    font-size: 18px;
+    color: #007bff;
+}
+
+/* Description paragraph */
+.terms-list p {
+    margin-top: 8px;
+    color: #444;
+    line-height: 1.5;
+}
+
+
+/* Below section ka CSS */
+
+/* CONTACT SECTION WRAPPER */
+.contact-container {
+    display: flex;
+    width: 90%;
+    margin: 50px auto;
+    gap: 25px;
+    font-family: Arial, sans-serif;
+}
+
+/* LEFT SIDE — CONTACT INFO */
+.contact-info {
+    width: 50%;
+    background: #f7f7fb;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.12);
+    margin: 5em;
+}
+
+.contact-info h2 {
+    margin-bottom: 15px;
+    color: #222;
+    font-size: 26px;
+}
+
+.contact-info .info-item {
+    margin-bottom: 20px;
+}
+
+.contact-info strong {
+    color: #007bff;
+}
+.contact-form {
+    width: 50%;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.12);
+    margin: 5em;
+}
+.contact-form h2 {
+    margin-bottom: 20px;
+    font-size: 26px;
+    color: #222;
+}
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.contact-form label {
+    font-weight: bold;
+    margin-bottom: 3px;
+    color: #333;
+}
+.contact-form input {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    width: 90%;   
+}
+.contact-form textarea {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    width: 90%;    
+    height: 120px;
+    resize: none;
+    line-height: 1.4;
+}
+.contact-form button {
+    margin-top: 10px;
+    padding: 12px;
+    width: 150px;
+    border: none;
+    border-radius: 8px;
+    background: #007bff;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.contact-form button:hover {
+    background: #005fcc;
+}
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+    }
+
+    .contact-info, 
+    .contact-form {
+        width: 100%;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .dashboard {
+        flex-direction: column;
+    }
+
+    .card {
+        flex: 1 1 100%;
+    }
+
+    .card:hover::after {
+        top: 110%;
+        left: 0;
+        right: 0;
+        transform: none;
+        max-width: 100%;
+    }
+}
+.best-panel {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+
+    width: 320px;
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.25);
+    z-index: 10;
+}
+.best-panel h3 {
+    margin: 15px 0 8px;
+    font-size: 18px;
+    color: #222;
+}
+.panel-box {
+    background: #f3f6ff;
+    border: 1px solid #cdd7ff;
+    padding: 10px 12px;
+    border-radius: 8px;
+    color: #333;
+    font-size: 15px;
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+.header-frame {
+    width: 100%;
+    height: 80px;
+    border: 0;
+}
+.content {
+    margin: 40px auto;
+    padding: 20px;
+    width: 80%;
+    background: rgba(255, 255, 255, 0.975);
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background: rgba(255, 255, 255, 0.08);
+    margin: 18px 0;
+    padding: 18px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+li:hover {
+    background: rgba(247, 240, 240, 0.15);
+    transform: scale(1.02);
+}
+
+li p {
+    margin-top: 8px;
+    color: #cdd6ff;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+strong {
+    font-size: 20px;
+    color: #9ab6ff;
+}
+
+
+
+.city-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: #ffffff10;
+    backdrop-filter: blur(6px);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.city-table th, 
+.city-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #ddd;
+    color: #1d0303;
+}
+
+.city-table th {
+    background-color: #1a237e;
+    text-align: left;
+    font-size: 18px;
+}
+
+.city-table tr:hover {
+    background-color: #ffffff20;
+}
+
+.footer {
+    background: linear-gradient(180deg, #0a0f24, #0d1240);
+    color: #ffffff;
+    padding: 25px 30px;
+    font-family: "Poppins", sans-serif;
+    border-top: 2px solid rgba(255, 255, 255, 0.1);
+}
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.team-left h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #8cc6ff;
+    margin: 0;
+}
+.team-center {
+    text-align: left; 
+    flex: 1;
+    margin-left: 40px;
+}
+
+.team-center p {
+    margin: 0;
+    font-size: 20px; 
+    color: #d9e6ff;
+}
+.footer-bottom {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.footer-bottom p {
+    font-size: 14px;
+    color: #9fb2d9;
+    opacity: 0.8;
+    margin: 0;
+}
